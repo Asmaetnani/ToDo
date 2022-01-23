@@ -5,7 +5,12 @@ Our Application interface
 -
 ![WhatsApp Image 2022-01-23 at 16 29 13](https://user-images.githubusercontent.com/93820154/150686449-1540d657-8b0f-4068-b912-57d34569b0cb.jpeg)
 
-We created 3 menus:
+The View of the main widget is split in three areas:
+->The first (en persistent) area shows the list of today tasks.
+->The second one is reserved for pending task (tasks for the future).
+->Finally, the third one shows the set of finished tasks.
+
+We also created 3 menus:
 
 1-File menu:
 
@@ -39,3 +44,52 @@ void ToDo::on_action_Quit_triggered()
 }
 ```
 
+Creating new tasks
+-
+To add a task we first need a dialog
+```cpp
+#include "addtask.h"
+#include "ui_addtask.h"
+
+addtask::addtask(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::addtask)
+{
+    ui->setupUi(this);
+}
+
+addtask::~addtask()
+{
+    delete ui;
+}
+QString addtask::gettask() {
+   return ui->lineEdit->text()+ " Due: "+ui->dateEdit->text() + " Tag: " +ui->comboBox->currentText();}
+
+    QDate addtask::getdate(){
+       return ui->dateEdit->date();
+    }
+    bool addtask::get_finished_task(){
+       return ui->checkBox->isChecked();
+    }
+    QString addtask::getTag(){
+       return ui->comboBox->currentText();
+}
+```
+
+```cpp
+void ToDo::on_actionAdd_task_triggered()
+{
+    addtask D;
+     auto reply = D.exec();
+     if (reply==addtask::Accepted)
+     {
+         if (D.get_finished_task())
+         {
+            ui->finishedtasks->addItem(D.gettask());
+         }
+      else if (QDate::currentDate() == D.getdate())
+          ui->taskslist->addItem(D.gettask());
+      else
+          ui->pendingtasks->addItem(D.gettask());
+}}
+```
