@@ -9,7 +9,7 @@ The View of the main widget is split in three areas:The first (en persistent) ar
 -The second one is reserved for pending task (tasks for the future)
 -Finally, the third one shows the set of finished tasks.
 
-We also created 3 menus:
+We create a menuBar that composed of 3 menus:
 
 1-File menu:
 
@@ -45,7 +45,8 @@ void ToDo::on_action_Quit_triggered()
 
 Creating new tasks
 -
-The essential components of a task : description, finished and a Tag.
+The essential components of a task : description, finished ,a Tag and finally DueDate.
+
 To add a task we first need a dialog
 ```cpp
 #include "addtask.h"
@@ -127,6 +128,11 @@ void ToDo::on_actionFinished_Tasks_toggled(bool arg1)
 
 ```
 
+ MVC Model
+ -
+ 
+ Conclusion
+ -
  
  
  
