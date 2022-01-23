@@ -2,5 +2,4 @@
 Create a versatile Todo app using (Item/Model) based containers
 
 # Application interface
-![image](https://user-images.githubusercontent.com/93820154/150686324-60a5094f-2039-470e-bbd3-1a4c84636a62.png)
-
+![WhatsApp Image 2022-01-23 at 16 29 13](https://user-images.githubusercontent.com/93820154/150686449-1540d657-8b0f-4068-b912-57d34569b0cb.jpeg)
