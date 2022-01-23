@@ -26,5 +26,15 @@ Here is a list of cases that the user could perform with our app:
 close the application
 -
 ***
-zdzn
+void ToDo::on_action_Quit_triggered()
+{
+    QFile file("CurrentFile.txt");
+    if(file.open(QIODevice::ReadWrite|QIODevice::Text)){
+    QTextStream stream(&file);
+    stream<<currentFile;
+    file.close();
+    }
+    
+    this->close();
+}
 ***
