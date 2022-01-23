@@ -18,3 +18,11 @@ We created 3 menus:
 3-Help menu:
 
 ![image](https://user-images.githubusercontent.com/93820154/150686564-0018e59a-005d-4402-80e4-dff721ec936b.png)
+
+Use Cases:
+-
+Here is a list of cases that the user could perform with our app:
+
+close the application
+-
+/*djndjz*/
