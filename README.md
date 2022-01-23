@@ -25,7 +25,7 @@ Here is a list of cases that the user could perform with our app:
 
 close the application
 -
-***
+***/
 void ToDo::on_action_Quit_triggered()
 {
     QFile file("CurrentFile.txt");
@@ -37,4 +37,4 @@ void ToDo::on_action_Quit_triggered()
     
     this->close();
 }
-***
+***/
