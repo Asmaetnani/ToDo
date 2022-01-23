@@ -45,6 +45,7 @@ void ToDo::on_action_Quit_triggered()
 
 Creating new tasks
 -
+The essential components of a task : description, finished and a Tag.
 To add a task we first need a dialog
 ```cpp
 #include "addtask.h"
@@ -92,7 +93,9 @@ void ToDo::on_actionAdd_task_triggered()
           ui->pendingtasks->addItem(D.gettask());
 }}
 ```
-
+![image](https://user-images.githubusercontent.com/93820154/150688803-dff854fe-e075-40b5-b7b2-0a278305e86f.png)
+ 
+ 
 Hide/Show the pending
 -
 ```cpp
@@ -124,10 +127,6 @@ void ToDo::on_actionFinished_Tasks_toggled(bool arg1)
 
 ```
 
-Defining a Task
--
-![image](https://user-images.githubusercontent.com/93820154/150688803-dff854fe-e075-40b5-b7b2-0a278305e86f.png)
- 
  
  
  
